@@ -30,7 +30,9 @@ Here, in this work, we propose a new insight that tries to let models evaluate t
 
 For the input $x_t$, with pairwise models $f_i$ and $f_j$, we utilize model $f_k$ to decide which model will win by the following:
 
-- $f_i \rightarrow \text{win}, \text{if} \ s(o_i, o_k) > s(o_j, o_k); \\ f_j \rightarrow \text{win}, \text{if} \ s(o_i, o_k) < s(o_j, o_k); \\ \text{tie}, \text{if} \ s(o_i, o_k) = s(o_j, o_k).$
+- $f_i \rightarrow \text{win}, \text{if} \ s(o_i, o_k) > s(o_j, o_k);$
+- $f_j \rightarrow \text{win}, \text{if} \ s(o_i, o_k) < s(o_j, o_k);$
+- $\text{tie}, \text{if} \ s(o_i, o_k) = s(o_j, o_k).$
 
 where $s(\cdot, \cdot)$ is the BERT-score, which here is to measure the token overlap between two outputs. We regard model $k$ prefers model $i$ as its output has a higher overlap with the output of model $i$; otherwise, model $k$ prefers model $j$. Here, if $o_k$ is seen as the reference, then we use the recall score from BERT-score, and if $o_k$ is seen as the hypothesis, then we use the precision score. In this way, we only focus on the token overlap between two model outputs, without considering the output length of model $i$ and model $j$.
 
