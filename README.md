@@ -4,10 +4,6 @@ By [**Hai Ye**](https://oceanypt.github.io/), from National University of Singap
 
 We present an automatic evaluation method for evaluating instruction-following ability of large language models. 
 
-Different from using GPT-4 as the evaluator, our method utilizes the model themselves to do self evaluation. 
-
-
-
 ## :blue_book: Introduction
 
 Currently, there are more and more open-sourced and not open-sourced instruction-following models, such as ChatGPT, GPT-4, Claude, Bard, Vicuna, Alpaca, etc. These models are fine-tuned on pre-trained large language models such as GPT-3 and LLaMA, with instructions labeled by humans or distilled from larger models (e.g., ChatGPT). 
@@ -16,7 +12,7 @@ How to evaluate these models becomes an issue and attracts more attention recent
 
 Recently, a benchmark called [**Arena**](https://arena.lmsys.org) tries to bridge the gap by using human evaluation in the wild. Each time a user asks a question, the system out of the benchmark will sample two models to generate two separate outputs for the question. Then the user has to make a preference over the two model outputs. The preferred model wins the not preferred model. By collecting many pairs of these comparisons, the Elo ratings will be calculated using these results of pairwise comparisons. 
 
-One obvious **drawback** of this kind of evaluation methodology lies in that it is quite costly to conduct human evaluations and the whole process is not reproducible. 
+The obvious **drawbacks** of human-in-the-loop evaluation are the high cost and irreproducibility. 
 
 
 
@@ -42,8 +38,6 @@ where $s(\cdot, \cdot)$ is the BERT-score, which here is to measure the token ov
 So, repeating all evaluation data ($M$), all pairwise model samples ($C_N^2$), and all rest of the models as the evaluator ($N-2$), we can obtain total $M * C_N^2 * (N-2)$ pairs, each records two model names and the comparison result. 
 
 Finally, with these compare results, we also calculate the Elo ratings to obtain the final model rankings.
-
-
 
 
 
