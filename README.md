@@ -30,11 +30,20 @@ Here, in this work, we propose a new insight that tries to let models evaluate t
 
 For the input $x_t$, with pairwise models $f_i$ and $f_j$, we utilize model $f_k$ to decide which model will win by the following:
 
-$f_i \rightarrow \text{win}, \text{if} \ s(o_i, o_k) > s(o_j, o_k); \\ f_j \rightarrow \text{win}, \text{if} \ s(o_i, o_k) < s(o_j, o_k); \\ \text{tie}, \text{if} \ s(o_i, o_k) = s(o_j, o_k).$
+- $f_i \rightarrow \text{win}, \text{if} \ s(o_i, o_k) > s(o_j, o_k); \\ f_j \rightarrow \text{win}, \text{if} \ s(o_i, o_k) < s(o_j, o_k); \\ \text{tie}, \text{if} \ s(o_i, o_k) = s(o_j, o_k).$
 
 where $s(\cdot, \cdot)$ is the BERT-score, which here is to measure the token overlap between two outputs. We regard model $k$ prefers model $i$ as its output has a higher overlap with the output of model $i$; otherwise, model $k$ prefers model $j$. Here, if $o_k$ is seen as the reference, then we use the recall score from BERT-score, and if $o_k$ is seen as the hypothesis, then we use the precision score. In this way, we only focus on the token overlap between two model outputs, without considering the output length of model $i$ and model $j$.
 
 So, repeating all evaluation data ($M$), all pairwise model samples ($C_N^2$), and all rest of the models as the judge ($N-2$), we can obtain total $M * C_N^2 * (N-2)$ pairs, each records two model names and the comparison result. 
 
 Finally, with these compare results, we also calculate the Elo ratings to obtain the final model rankings.
+
+## Improvement
+
+The weak models may not be capable of evaluating strong models. In theory, weak models can evaluate the strong models, but they may introduce some noise. **If a model is very weak compared to two evaluated models, then it may not be so accurate for the results.** **But if the performance of models is not so different, then the evaluation would be more robust.** 
+
+The solution can be:
+
+- We first do an evaluation without saying which model is strong or which model is weak. We obtain the first-round rankings and results.
+- Then, we only keep the top models and do the second-round evaluation.
 
