@@ -55,9 +55,9 @@ The solution can be:
 
 
 ## Code Usage
-To use our code, you should prepare the outputs of different models under the same folder. Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. 
+To use our code, you should prepare the outputs of different models under the same folder (e.g., ./responses). Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. The file name can just be the model name (e.g, ChatGPT).
 
-Here, we provide some example outputs under the folder of /responses. By running as follows, 
+Here, we provide some example outputs under the folder of /responses (examples can be uploaded later). By running as follows, 
 ```bash
 python self_evaluation.py -i ./responses  -b 0. -m bert-score -f allenai/longformer-large-4096
 ```
@@ -92,8 +92,6 @@ All compares: 19908
 Here, we use BERT-score as the evaluation metric, you can also use Rouge score. 
 
 By running the above code, you would see the **Elo rating** of the tested models.
-
-
 
 
 
