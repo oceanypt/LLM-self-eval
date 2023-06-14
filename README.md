@@ -1,8 +1,11 @@
 # A Self-Evaluation Method for Large Language Models
 
+By [**Hai Ye**](https://oceanypt.github.io/), from National University of Singapore.
+
 We present an automatic evaluation method for evaluating instruction-following ability of large language models. 
 
 Different from using GPT-4 as the evaluator, our method utilizes the model themselves to do self evaluation. 
+
 
 
 ## Introduction
