@@ -59,6 +59,33 @@ To use our code, you should prepare the outputs of different models under the sa
 ```bash
 python self_evaluation.py -i ./responses  -b 0. -m bert-score -f allenai/longformer-large-4096
 ```
+You will obtain:
+```
+All compares: 19908
+===== Elo Rankings =====
+          Model: Rating
+1.         ChatGPT: 1181.7
+2.  Claude-instant: 1088.1
+3.         PaLM-v2: 1061.2
+4.      Vicuna-13B: 1053.6
+5.      ChatGLM-6B: 1023.3
+6. Oasst-Pythia-12B: 1000.1
+7.        RWKV-14b: 983.0
+8.     mpt-7b-chat: 933.4
+9.    Dolly-V2-12B: 678.4
+===== Num of wins =====
+          Model: Wins
+1.         ChatGPT: 3284
+2.  Claude-instant: 2720
+3.         PaLM-v2: 2559
+4.      Vicuna-13B: 2514
+5.      ChatGLM-6B: 2313
+6. Oasst-Pythia-12B: 2181
+7.        RWKV-14b: 2060
+8.     mpt-7b-chat: 1750
+9.    Dolly-V2-12B: 520
+```
+
 Here, we use BERT-score as the evaluation metric, you can also use Rouge score. 
 
 By running the above code, you would see the **Elo rating** of the tested models.

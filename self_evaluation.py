@@ -102,7 +102,7 @@ def main():
 
     pairwise_comps = [] ## ('model_a', 'model_b', 'win')
 
-    patterns = {}
+
     num_wins = {}
     to_remove = {}
     if args.toRemove:
@@ -167,27 +167,20 @@ def main():
                 for sa, sb in zip(score_a, score_b):
                     if sa > sb:
                         pairwise_comps.append((model_a[0], model_b[0], model_a[0]))
-                        if c_pattern + '^'+model_a[0]+'^' not in patterns:
-                            patterns[c_pattern + '^'+model_a[0]+'^'] = 0
-                        patterns[c_pattern + '^'+model_a[0]+'^'] += 1
+
                         if model_a[0] not in num_wins:
                             num_wins[model_a[0]] = 0
                         num_wins[model_a[0]] += 1
 
                     elif sa < sb:
                         pairwise_comps.append((model_a[0], model_b[0], model_b[0]))
-                        if c_pattern + '^'+model_b[0]+'^' not in patterns:
-                            patterns[c_pattern + '^'+model_b[0]+'^'] = 0
-                        patterns[c_pattern + '^'+model_b[0]+'^'] += 1
                         if model_b[0] not in num_wins:
                             num_wins[model_b[0]] = 0
                         num_wins[model_b[0]] += 1
 
                     elif sa == sb:
                         pairwise_comps.append((model_a[0], model_b[0], 'tie'))
-                        if c_pattern + '^'+'tie'+'^' not in patterns:
-                            patterns[c_pattern + '^'+'tie'+'^'] = 0
-                        patterns[c_pattern + '^'+'tie'+'^'] += 1
+
 
     random.shuffle(pairwise_comps)
     win_rate = predict_win_rate(compute_elo(pairwise_comps, K=4, SCALE=400, BASE=10, INIT_RATING=1000))
@@ -246,14 +239,12 @@ def main():
 
     print()
     print(args)
-    sorted_patterns = dict(sorted(patterns.items(), key=lambda item: item[1], reverse=True))
-    for k, v in sorted_patterns.items():
-        print(f'{k:>15}: {v}')
     print(f'All compares: {len(pairwise_comps)}')
     print('===== Elo Rankings =====')
     print("{:>15}: Rating".format("Model"))
     for i, (k, v) in enumerate(sorted_ratings.items()):
         print(f'{i+1}. {k:>15}: {v:.1f}')
+    
     
 
     sorted_wins = dict(sorted(num_wins.items(), key=lambda item: item[1], reverse=True))
