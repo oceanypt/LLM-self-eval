@@ -70,13 +70,14 @@ python self_evaluation.py -h
 
 
 ## Citation
-
-> @misc{HaiYe-LLM-self-eval,
->  author = {Hai Ye},
->  title = {A Self-Evaluation Method for Large Language Models},
->  year = {2023},
->  publisher = {GitHub},
->  journal = {GitHub repository},
->  howpublished = {\url{https://github.com/oceanypt/LLM-self-eval}}
->}
+```
+@misc{HaiYe-LLM-self-eval,
+  author = {Hai Ye},
+  title = {A Self-Evaluation Method for Large Language Models},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/oceanypt/LLM-self-eval}}
+}
+```
 
