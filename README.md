@@ -6,7 +6,7 @@ We present an automatic evaluation method for evaluating instruction-following a
 
 ## :blue_book: Introduction
 
-Currently, there are more and more open-sourced and not open-sourced instruction-following models, such as ChatGPT, GPT-4, Claude, Bard, Vicuna, Alpaca, etc. These models are fine-tuned on pre-trained large language models such as GPT-3 and LLaMA, with instructions labeled by humans or distilled from larger models (e.g., ChatGPT). 
+Currently, there are more and more open-sourced and closed instruction-following models, such as ChatGPT, GPT-4, Claude, Bard, Vicuna, Alpaca, etc.
 
 How to evaluate these models becomes an issue and attracts more attention recently. Evaluating the outputs from these instruction-following models is not easy, since the outputs of the models are open-ended and actually there are no gold answers. 
 
