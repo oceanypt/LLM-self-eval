@@ -49,3 +49,34 @@ The solution can be:
 - We first do an evaluation without saying which model is strong or which model is weak. We obtain the first-round rankings and results.
 - Then, we only keep the top models and do the second-round evaluation.
 
+
+
+## Code Usage
+To use our code, you should prepare the outputs of different models under the same folder. Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. After that, run as follows:
+```bash
+python self_evaluation.py -i ./responses  -b 0. -m bert-score -f allenai/longformer-large-4096
+```
+Here, we use BERT-score as the evaluation metric, you can also use Rouge score. 
+
+By running the above code, you would see the **Elo rating** of the tested models.
+
+
+To know more information of the arguments, run:
+```bash
+python self_evaluation.py -h
+```
+
+
+
+
+## Citation
+
+> @misc{HaiYe-LLM-self-eval,
+>  author = {Hai Ye},
+>  title = {A Self-Evaluation Method for Large Language Models},
+>  year = {2023},
+>  publisher = {GitHub},
+>  journal = {GitHub repository},
+>  howpublished = {\url{https://github.com/oceanypt/LLM-self-eval}}
+>}
+
