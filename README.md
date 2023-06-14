@@ -22,7 +22,7 @@ One obvious **drawback** of this kind of evaluation methodology lies in that it 
 
 ## Auto-evaluation by Model Themselves
 
-Here, in this work, we propose a new insight that tries to let models evaluate themselves. Similar to Arena, we also conduct pairwise comparisons among models, but the difference is that we don’t require humans to leave preference feedback anymore, but let the rest of the models that don’t participate in the comparison do evaluation. 
+Here, we propose a new insight that tries to let models evaluate themselves. Similar to Arena, we also conduct pairwise comparisons among models, but the difference is that we don’t require humans to leave preference feedback anymore, but let the rest of the models that don’t participate in the comparison do evaluation. 
 
 
 ## Method
@@ -64,10 +64,15 @@ Here, we use BERT-score as the evaluation metric, you can also use Rouge score.
 By running the above code, you would see the **Elo rating** of the tested models.
 
 
+
+
+
 To know more information of the arguments, run:
 ```bash
 python self_evaluation.py -h
 ```
+
+
 
 
 
