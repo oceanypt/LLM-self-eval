@@ -1,4 +1,4 @@
-# A Self-Evaluation Method for Large Language Models
+# 🩺 A Self-Evaluation Method for Large Language Models
 
 By [**Hai Ye**](https://oceanypt.github.io/), from National University of Singapore.
 
@@ -8,7 +8,7 @@ Different from using GPT-4 as the evaluator, our method utilizes the model thems
 
 
 
-## Introduction
+## :blue_book: Introduction
 
 Currently, there are more and more open-sourced and not open-sourced instruction-following models, such as ChatGPT, GPT-4, Claude, Bard, Vicuna, Alpaca, etc. These models are fine-tuned on pre-trained large language models such as GPT-3 and LLaMA, with instructions labeled by humans or distilled from larger models (e.g., ChatGPT). 
 
@@ -20,12 +20,12 @@ One obvious **drawback** of this kind of evaluation methodology lies in that it 
 
 
 
-## Auto-evaluation by Model Themselves
+## :books: Auto-evaluation by Model Themselves
 
 Here, we propose a new insight that tries to let models evaluate themselves. Similar to Arena, we also conduct pairwise comparisons among models, but the difference is that we don’t require humans to leave preference feedback anymore, but let the rest of the models that don’t participate in the comparison do evaluation. 
 
 
-## Method
+## :notebook_with_decorative_cover: Method
 
 **Notation**. Suppose we have $N$ models for evaluation, and model $i$ is denoted as $f_i$. We also have an evaluation set $D=\\{x_t\\}_{t=1}^M$. We also have an evaluation metric $s(o_i,o_j)$ to compare two model outputs which are $o_i$ and $o_j$.
 
@@ -43,7 +43,7 @@ So, repeating all evaluation data ($M$), all pairwise model samples ($C_N^2$), a
 
 Finally, with these compare results, we also calculate the Elo ratings to obtain the final model rankings.
 
-## Improvement
+## :notebook_with_decorative_cover: Improvement
 
 The weak models may not be capable of evaluating strong models. In theory, weak models can evaluate the strong models, but they may introduce some noise. **If a model is very weak compared to two evaluated models, then it may not be so accurate for the results.** **But if the performance of models is not so different, then the evaluation would be more robust.** 
 
@@ -54,7 +54,7 @@ The solution can be:
 
 
 
-## Code Usage
+## :notebook_with_decorative_cover: Code Usage
 To use our code, you should prepare the outputs of different models under the same folder (e.g., ./responses). Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. The file name can just be the model name (e.g, ChatGPT).
 
 Here, we provide some example outputs under the folder of /responses (examples can be uploaded later). By running as follows, 
