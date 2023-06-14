@@ -9,7 +9,7 @@ Different from using GPT-4 as the evaluator, our method utilizes the model thems
 
 ## Method
 
-Notation. Suppose we have $N$ models for evaluation, and model $i$ is denoted as $f_i$. We also have an evaluation set $D=\{x_t\}_{t=1}^M$. We also have an evaluation metric $s(o_i,o_j)$ to compare two model outputs which are $o_i$ and $o_j$.
+Notation. Suppose we have $N$ models for evaluation, and model $i$ is denoted as $f_i$. We also have an evaluation set $D={x_t}_{t=1}^M$. We also have an evaluation metric $s(o_i,o_j)$ to compare two model outputs which are $o_i$ and $o_j$.
 
 **Algorithm**. So, every time, for the input $x_t$, we sample two models which are $f_i$ and $f_j$, and we obtain the outputs from the two models respectively, $o_i(x_t)$ and $o_j(x_t)$. Then we also randomly sample a model $f_k$ from the rest $N-2$ models, and also obtain its output $o_k(x_t)$. 
 
