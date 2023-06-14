@@ -14,7 +14,7 @@ Currently, there are more and more open-sourced and not open-sourced instruction
 
 How to evaluate these models becomes an issue and attracts more attention recently. Evaluating the outputs from these instruction-following models is not easy, since the outputs of the models are open-ended and actually there are no gold answers. 
 
-Recently, a benchmark called **Arena** tries to bridge the gap by using human evaluation in the wild. Each time a user asks a question, the system out of the benchmark will sample two models to generate two separate outputs for the question. Then the user has to make a preference over the two model outputs. The preferred model wins the not preferred model. By collecting many pairs of these comparisons, the Elo ratings will be calculated using these results of pairwise comparisons. 
+Recently, a benchmark called [**Arena**](https://arena.lmsys.org) tries to bridge the gap by using human evaluation in the wild. Each time a user asks a question, the system out of the benchmark will sample two models to generate two separate outputs for the question. Then the user has to make a preference over the two model outputs. The preferred model wins the not preferred model. By collecting many pairs of these comparisons, the Elo ratings will be calculated using these results of pairwise comparisons. 
 
 One obvious **drawback** of this kind of evaluation methodology lies in that it is quite costly to conduct human evaluations and the whole process is not reproducible. 
 
