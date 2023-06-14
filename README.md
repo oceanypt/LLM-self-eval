@@ -55,11 +55,13 @@ The solution can be:
 
 
 ## Code Usage
-To use our code, you should prepare the outputs of different models under the same folder. Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. After that, run as follows:
+To use our code, you should prepare the outputs of different models under the same folder. Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. 
+
+Here, we provide some example outputs under the folder of /responses. By running as follows, 
 ```bash
 python self_evaluation.py -i ./responses  -b 0. -m bert-score -f allenai/longformer-large-4096
 ```
-You will obtain:
+you will obtain:
 ```
 All compares: 19908
 ===== Elo Rankings =====
@@ -85,6 +87,7 @@ All compares: 19908
 8.     mpt-7b-chat: 1750
 9.    Dolly-V2-12B: 520
 ```
+
 
 Here, we use BERT-score as the evaluation metric, you can also use Rouge score. 
 
