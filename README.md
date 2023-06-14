@@ -89,7 +89,7 @@ All compares: 19908
 ```
 
 The predicted win rate is like:
-![eval-result](image/eval_results.png)
+<img src="image/eval_results.png" alt="eval-result" width="200" height="200">
 
 
 
