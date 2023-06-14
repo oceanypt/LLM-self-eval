@@ -261,6 +261,8 @@ def main():
             print(f'{k:>15}: {v:.6f}')
 
     
+    print(f'Saved eval result to {args.output}')
+
 
 if __name__ == '__main__':
     main()      
