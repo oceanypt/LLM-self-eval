@@ -88,6 +88,10 @@ All compares: 19908
 9.    Dolly-V2-12B: 520
 ```
 
+The predicted win rate is like:
+![eval-result](image/eval_results.png)
+
+
 
 Here, we use BERT-score as the evaluation metric, you can also use Rouge score. 
 
