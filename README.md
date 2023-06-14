@@ -43,7 +43,7 @@ So, repeating all evaluation data ($M$), all pairwise model samples ($C_N^2$), a
 
 Finally, with these compare results, we also calculate the Elo ratings to obtain the final model rankings.
 
-## :notebook_with_decorative_cover: Improvement
+## :blue_book: Improvement
 
 The weak models may not be capable of evaluating strong models. In theory, weak models can evaluate the strong models, but they may introduce some noise. **If a model is very weak compared to two evaluated models, then it may not be so accurate for the results.** **But if the performance of models is not so different, then the evaluation would be more robust.** 
 
@@ -54,7 +54,7 @@ The solution can be:
 
 
 
-## :notebook_with_decorative_cover: Code Usage
+## :books: Code Usage
 To use our code, you should prepare the outputs of different models under the same folder (e.g., ./responses). Each file corresponds to one model, and each line in a file corresponds to the model output of one input instruction. The file name can just be the model name (e.g, ChatGPT).
 
 Here, we provide some example outputs under the folder of /responses (examples can be uploaded later). By running as follows, 
