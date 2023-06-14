@@ -90,7 +90,7 @@ All compares: 19908
 
 The predicted win rate is like:
 
-<img src="image/eval_results.png" alt="eval-result" width="500" height="500">
+<img src="image/eval_results.png" alt="eval-result" width="550" height="550">
 
 
 
